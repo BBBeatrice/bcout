@@ -1,5 +1,5 @@
-main_blowfish_alpaca.bc: \
-  /home/reviewer/alpaca-oopsla2017/src/main_blowfish_alpaca.c \
+main_rsa_alpaca.bc: \
+  /home/reviewer/alpaca-oopsla2017/src/main_rsa_alpaca.c \
   /opt/ti/mspgcc/msp430-elf/include/msp430.h \
   /opt/ti/mspgcc/msp430-elf/include/msp430fr5969.h \
   /opt/ti/mspgcc/msp430-elf/include/iomacros.h \
@@ -35,4 +35,7 @@ main_blowfish_alpaca.bc: \
   /home/reviewer/alpaca-oopsla2017/ext/libmsp/src/include/libmsp/clock.h \
   /home/reviewer/alpaca-oopsla2017/ext/libmsp/src/include/libmsp/watchdog.h \
   /home/reviewer/alpaca-oopsla2017/ext/libmsp/src/include/libmsp/gpio.h \
-  /home/reviewer/alpaca-oopsla2017/src/pins.h
+  /home/reviewer/alpaca-oopsla2017/ext/libmspmath/src/include/libmspmath/msp-math.h \
+  /home/reviewer/alpaca-oopsla2017/src/pins.h \
+  /home/reviewer/alpaca-oopsla2017/src/../data/key64.txt \
+  /home/reviewer/alpaca-oopsla2017/src/../data/plaintext.txt
