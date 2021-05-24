@@ -1,4 +1,5 @@
-main_ar_alpaca.bc: /home/reviewer/alpaca-oopsla2017/src/main_ar_alpaca.c \
+main_cem_alpaca.bc: \
+  /home/reviewer/alpaca-oopsla2017/src/main_cem_alpaca.c \
   /opt/ti/mspgcc/msp430-elf/include/msp430.h \
   /opt/ti/mspgcc/msp430-elf/include/msp430fr5969.h \
   /opt/ti/mspgcc/msp430-elf/include/iomacros.h \
@@ -19,11 +20,16 @@ main_ar_alpaca.bc: /home/reviewer/alpaca-oopsla2017/src/main_ar_alpaca.c \
   /opt/ti/mspgcc/msp430-elf/include/machine/_types.h \
   /opt/ti/mspgcc/msp430-elf/include/sys/lock.h \
   /opt/ti/mspgcc/msp430-elf/include/machine/stdlib.h \
-  /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/accel.h \
+  /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/wisp-base.h \
   /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/globals.h \
   /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/pin-assign.h \
   /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/wispGuts.h \
   /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/mem-map.h \
+  /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/uart.h \
+  /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/fram.h \
+  /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/rfid.h \
+  /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/timer.h \
+  /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/rand.h \
   /home/reviewer/alpaca-oopsla2017/ext/alpaca/AlpacaRuntime/libalpaca/src/include/libalpaca/alpaca.h \
   /home/reviewer/alpaca-oopsla2017/ext/libmsp/src/include/libmsp/mem.h \
   /home/reviewer/alpaca-oopsla2017/ext/libmspbuiltins/src/include/libmspbuiltins/builtins.h \
@@ -39,5 +45,4 @@ main_ar_alpaca.bc: /home/reviewer/alpaca-oopsla2017/src/main_ar_alpaca.c \
   /home/reviewer/alpaca-oopsla2017/ext/libmsp/src/include/libmsp/clock.h \
   /home/reviewer/alpaca-oopsla2017/ext/libmsp/src/include/libmsp/watchdog.h \
   /home/reviewer/alpaca-oopsla2017/ext/libmsp/src/include/libmsp/gpio.h \
-  /home/reviewer/alpaca-oopsla2017/ext/libmspmath/src/include/libmspmath/msp-math.h \
   /home/reviewer/alpaca-oopsla2017/src/pins.h
