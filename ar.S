@@ -94,7 +94,7 @@ initializeHardware:                     ; @initializeHardware
 ; BB#0:                                 ; %entry
 	push.w	r4
 	mov.w	r1, r4
-	sub.w	#10, r1
+	sub.w	#12, r1
 	mov.w	&timer, r12
 	mov.w	0(r12), r13
 	and.w	#-6401, r13
@@ -126,15 +126,19 @@ initializeHardware:                     ; @initializeHardware
 	;APP
 	eint { nop
 	;NO_APP
+	mov.w	r1, r12
+	mov.w	#.L.str, 0(r12)
+	call	#printf
 	mov.w	&curctx, r12
 	mov.w	0(r12), r12
 	mov.w	2(r12), r12
 	mov.w	r1, r13
 	mov.w	r12, 2(r13)
-	mov.w	#.L.str, 0(r13)
-	call	#printf
+	mov.w	#.L.str.1, 0(r13)
 	mov.w	r15, -6(r4)             ; 2-byte Folded Spill
-	add.w	#10, r1
+	call	#printf
+	mov.w	r15, -8(r4)             ; 2-byte Folded Spill
+	add.w	#12, r1
 	pop.w	r4
 	ret
 .Lfunc_end2:
@@ -147,11 +151,22 @@ task_init:                              ; @task_init
 ; BB#0:                                 ; %entry
 	push.w	r4
 	mov.w	r1, r4
+	sub.w	#6, r1
+	mov.w	r1, r12
+	mov.w	#.L.str.2, 0(r12)
+	call	#printf
+	mov.w	r1, r12
+	mov.w	#.L.str.3, 0(r12)
+	mov.w	r15, -2(r4)             ; 2-byte Folded Spill
+	call	#printf
 	mov.w	#3, &_global_pinState
 	mov.w	#0, &_global_count
 	mov.w	#1, &_global_seed
-	mov.w	#_task_task_selectMode, r15
+	mov.w	#_task_task_selectMode, r12
+	mov.w	r15, -4(r4)             ; 2-byte Folded Spill
+	mov.w	r12, r15
 	call	#transition_to
+	add.w	#6, r1
 	pop.w	r4
 	ret
 .Lfunc_end3:
@@ -198,7 +213,7 @@ task_selectMode:                        ; @task_selectMode
 	mov.w	r1, r14
 	mov.w	r13, 4(r14)
 	mov.w	r12, 2(r14)
-	mov.w	#.L.str.1, 0(r14)
+	mov.w	#.L.str.4, 0(r14)
 	call	#printf
 	mov.w	r15, -8(r4)             ; 2-byte Folded Spill
 	jmp	.LBB4_6
@@ -1755,7 +1770,7 @@ task_stats:                             ; @task_stats
 	mov.w	r15, 4(r13)
 	mov.w	-32(r4), r15            ; 2-byte Folded Reload
 	mov.w	r15, 2(r13)
-	mov.w	#.L.str.2, 0(r13)
+	mov.w	#.L.str.5, 0(r13)
 	call	#printf
 	mov.w	#_global_movingCount, r14
 	mov.w	#2, r12
@@ -3140,18 +3155,33 @@ data_size:
 	.type	.L.str,@object          ; @.str
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .L.str:
-	.asciz	".%u.\r\n"
-	.size	.L.str, 7
+	.asciz	"init:initialiazing accel\r\n"
+	.size	.L.str, 27
 
 	.type	.L.str.1,@object        ; @.str.1
 .L.str.1:
-	.asciz	"TIME end is 65536*%u+%u\r\n"
-	.size	.L.str.1, 26
+	.asciz	".%u.\r\n"
+	.size	.L.str.1, 7
 
 	.type	.L.str.2,@object        ; @.str.2
 .L.str.2:
+	.asciz	"init"
+	.size	.L.str.2, 5
+
+	.type	.L.str.3,@object        ; @.str.3
+.L.str.3:
+	.asciz	"init\r\n"
+	.size	.L.str.3, 7
+
+	.type	.L.str.4,@object        ; @.str.4
+.L.str.4:
+	.asciz	"TIME end is 65536*%u+%u\r\n"
+	.size	.L.str.4, 26
+
+	.type	.L.str.5,@object        ; @.str.5
+.L.str.5:
 	.asciz	"stats: s %u (%u%%) m %u (%u%%) sum/tot %u/%u: %c\r\n"
-	.size	.L.str.2, 51
+	.size	.L.str.5, 51
 
 	.type	watchdog_bits,@object   ; @watchdog_bits
 	.local	watchdog_bits
