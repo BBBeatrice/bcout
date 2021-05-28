@@ -151,22 +151,18 @@ task_init:                              ; @task_init
 ; BB#0:                                 ; %entry
 	push.w	r4
 	mov.w	r1, r4
-	sub.w	#6, r1
+	sub.w	#4, r1
 	mov.w	r1, r12
 	mov.w	#.L.str.2, 0(r12)
-	call	#printf
-	mov.w	r1, r12
-	mov.w	#.L.str.3, 0(r12)
-	mov.w	r15, -2(r4)             ; 2-byte Folded Spill
 	call	#printf
 	mov.w	#3, &_global_pinState
 	mov.w	#0, &_global_count
 	mov.w	#1, &_global_seed
 	mov.w	#_task_task_selectMode, r12
-	mov.w	r15, -4(r4)             ; 2-byte Folded Spill
+	mov.w	r15, -2(r4)             ; 2-byte Folded Spill
 	mov.w	r12, r15
 	call	#transition_to
-	add.w	#6, r1
+	add.w	#4, r1
 	pop.w	r4
 	ret
 .Lfunc_end3:
@@ -209,7 +205,7 @@ task_selectMode:                        ; @task_selectMode
 	jmp	.LBB4_5
 .LBB4_5:                                ; %if.then.5
 	mov.w	r1, r12
-	mov.w	#.L.str.4, 0(r12)
+	mov.w	#.L.str.3, 0(r12)
 	call	#printf
 	mov.w	r15, -8(r4)             ; 2-byte Folded Spill
 	jmp	.LBB4_6
@@ -1766,7 +1762,7 @@ task_stats:                             ; @task_stats
 	mov.w	r15, 4(r13)
 	mov.w	-32(r4), r15            ; 2-byte Folded Reload
 	mov.w	r15, 2(r13)
-	mov.w	#.L.str.5, 0(r13)
+	mov.w	#.L.str.4, 0(r13)
 	call	#printf
 	mov.w	#_global_movingCount, r14
 	mov.w	#2, r12
@@ -3166,18 +3162,13 @@ data_size:
 
 	.type	.L.str.3,@object        ; @.str.3
 .L.str.3:
-	.asciz	"init\r\n"
-	.size	.L.str.3, 7
+	.asciz	"task ends"
+	.size	.L.str.3, 10
 
 	.type	.L.str.4,@object        ; @.str.4
 .L.str.4:
-	.asciz	"task ends"
-	.size	.L.str.4, 10
-
-	.type	.L.str.5,@object        ; @.str.5
-.L.str.5:
 	.asciz	"stats: s %u (%u%%) m %u (%u%%) sum/tot %u/%u: %c\r\n"
-	.size	.L.str.5, 51
+	.size	.L.str.4, 51
 
 	.type	watchdog_bits,@object   ; @watchdog_bits
 	.local	watchdog_bits
