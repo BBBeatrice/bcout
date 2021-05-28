@@ -19,6 +19,13 @@ main_ar_alpaca.bc: /home/reviewer/alpaca-oopsla2017/src/main_ar_alpaca.c \
   /opt/ti/mspgcc/msp430-elf/include/machine/_types.h \
   /opt/ti/mspgcc/msp430-elf/include/sys/lock.h \
   /opt/ti/mspgcc/msp430-elf/include/machine/stdlib.h \
+  /opt/ti/mspgcc/msp430-elf/include/time.h \
+  /opt/ti/mspgcc/msp430-elf/include/machine/time.h \
+  /opt/ti/mspgcc/msp430-elf/include/sys/types.h \
+  /opt/ti/mspgcc/msp430-elf/include/machine/types.h \
+  /opt/ti/mspgcc/msp430-elf/include/stdio.h \
+  /opt/ti/mspgcc/lib/gcc/msp430-elf/4.9.1/include/stdarg.h \
+  /opt/ti/mspgcc/msp430-elf/include/sys/stdio.h \
   /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/accel.h \
   /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/globals.h \
   /home/reviewer/alpaca-oopsla2017/ext/libwispbase/src/include/libwispbase/pin-assign.h \
@@ -29,11 +36,6 @@ main_ar_alpaca.bc: /home/reviewer/alpaca-oopsla2017/src/main_ar_alpaca.c \
   /home/reviewer/alpaca-oopsla2017/ext/libmspbuiltins/src/include/libmspbuiltins/builtins.h \
   /home/reviewer/alpaca-oopsla2017/ext/libio/src/include/libio/log.h \
   /home/reviewer/alpaca-oopsla2017/ext/libio/src/include/libio/printf.h \
-  /opt/ti/mspgcc/msp430-elf/include/stdio.h \
-  /opt/ti/mspgcc/lib/gcc/msp430-elf/4.9.1/include/stdarg.h \
-  /opt/ti/mspgcc/msp430-elf/include/sys/types.h \
-  /opt/ti/mspgcc/msp430-elf/include/machine/types.h \
-  /opt/ti/mspgcc/msp430-elf/include/sys/stdio.h \
   /home/reviewer/alpaca-oopsla2017/ext/libmspconsole/src/include/libmspconsole/printf.h \
   /home/reviewer/alpaca-oopsla2017/ext/libmsp/src/include/libmsp/periph.h \
   /home/reviewer/alpaca-oopsla2017/ext/libmsp/src/include/libmsp/clock.h \
