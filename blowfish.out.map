@@ -1,13 +1,13 @@
 Archive member included because of file (symbol)
 
 /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a(printf.o)
-                              /tmp/ccQIfMaF.o (printf)
+                              /tmp/ccUSFbdn.o (printf)
 /home/reviewer/alpaca-oopsla2017/ext/libmspconsole/bld/gcc/libmspconsole.a(io.o)
-                              /tmp/ccQIfMaF.o (mspconsole_init)
+                              /tmp/ccUSFbdn.o (mspconsole_init)
 /home/reviewer/alpaca-oopsla2017/ext/libwispbase/bld/gcc/libwispbase.a(uart.o)
                               /home/reviewer/alpaca-oopsla2017/ext/libmspconsole/bld/gcc/libmspconsole.a(io.o) (UART_init)
 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-exit.o)
-                              /tmp/ccQIfMaF.o (exit)
+                              /tmp/ccUSFbdn.o (exit)
 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-impure.o)
                               /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-exit.o) (_global_impure_ptr)
 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-__call_atexit.o)
@@ -32,7 +32,7 @@ Archive member included because of file (symbol)
 Discarded input sections
 
  .note.GNU-stack
-                0x00000000        0x0 /tmp/ccQIfMaF.o
+                0x00000000        0x0 /tmp/ccUSFbdn.o
 
 Memory Configuration
 
@@ -111,7 +111,7 @@ Linker script and memory map
 
 LOAD /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
 LOAD /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
-LOAD /tmp/ccQIfMaF.o
+LOAD /tmp/ccUSFbdn.o
 LOAD /home/reviewer/alpaca-oopsla2017/ext/libmspbuiltins/bld/gcc/libmspbuiltins.a
 LOAD /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a
 LOAD /home/reviewer/alpaca-oopsla2017/ext/libmspconsole/bld/gcc/libmspconsole.a
@@ -306,7 +306,7 @@ __interrupt_vector_51
  *(__interrupt_vector_51)
  *(__interrupt_vector_timer0_b1)
  __interrupt_vector_timer0_b1
-                0x0000fff4        0x2 /tmp/ccQIfMaF.o
+                0x0000fff4        0x2 /tmp/ccUSFbdn.o
                 0x0000fff4                __vector_timer0_b1
 
 __interrupt_vector_52
@@ -331,111 +331,114 @@ __reset_vector  0x0000fffe        0x2
  *(.resetvec)
  .resetvec      0x0000fffe        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
 
-.rodata         0x00004400       0x8c
+.rodata         0x00004400       0xb4
                 0x00004400                . = ALIGN (0x2)
  *(.plt)
  *(.rodata .rodata.* .gnu.linkonce.r.* .const .const:*)
  .rodata.str1.1
-                0x00004400       0x3d /tmp/ccQIfMaF.o
-                                 0x42 (size before relaxing)
- *fill*         0x0000443d        0x1 
- .rodata        0x0000443e       0x38 /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a(printf.o)
+                0x00004400       0x66 /tmp/ccUSFbdn.o
+ .rodata        0x00004466       0x38 /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a(printf.o)
  .rodata._global_impure_ptr
-                0x00004476        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-impure.o)
-                0x00004476                _global_impure_ptr
- .rodata        0x00004478        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-impure.o)
+                0x0000449e        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-impure.o)
+                0x0000449e                _global_impure_ptr
+ .rodata        0x000044a0        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-impure.o)
  *(.rodata1)
  *(.lower.rodata.* .lower.rodata)
  *(.eh_frame_hdr)
  *(.eh_frame)
- *fill*         0x0000447a        0x2 
- .eh_frame      0x0000447c        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
- .eh_frame      0x0000447c        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
+ *fill*         0x000044a2        0x2 
+ .eh_frame      0x000044a4        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
+ .eh_frame      0x000044a4        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
  *(.gcc_except_table)
  *(.gcc_except_table.*)
-                0x00004480                PROVIDE (__preinit_array_start, .)
+                0x000044a8                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x00004480                PROVIDE (__preinit_array_end, .)
-                0x00004480                PROVIDE (__init_array_start, .)
+                0x000044a8                PROVIDE (__preinit_array_end, .)
+                0x000044a8                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array)
-                0x00004480                PROVIDE (__init_array_end, .)
-                0x00004480                PROVIDE (__fini_array_start, .)
+                0x000044a8                PROVIDE (__init_array_end, .)
+                0x000044a8                PROVIDE (__fini_array_start, .)
  *(.fini_array)
  *(SORT(.fini_array.*))
-                0x00004480                PROVIDE (__fini_array_end, .)
-                0x00004480        0x4 LONG 0x0
+                0x000044a8                PROVIDE (__fini_array_end, .)
+                0x000044a8        0x4 LONG 0x0
  *crtbegin*.o(.ctors)
- .ctors         0x00004484        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
+ .ctors         0x000044ac        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
  *(EXCLUDE_FILE(*crtend*.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
- .ctors         0x00004486        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
+ .ctors         0x000044ae        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
  *crtbegin*.o(.dtors)
- .dtors         0x00004488        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
+ .dtors         0x000044b0        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
  *(EXCLUDE_FILE(*crtend*.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
- .dtors         0x0000448a        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
-                0x0000448a                __DTOR_END__
+ .dtors         0x000044b2        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
+                0x000044b2                __DTOR_END__
 
-.nv             0x0000448c      0x180
-                0x0000448c                . = ALIGN (0x2)
-                0x0000448c                PROVIDE (__fram_vars_start, .)
+.nv             0x000044b4     0x2242
+                0x000044b4                . = ALIGN (0x2)
+                0x000044b4                PROVIDE (__fram_vars_start, .)
  *(.ro_nv_vars)
+ .ro_nv_vars    0x000044b4     0x1076 /tmp/ccUSFbdn.o
  *(.nv_vars)
- .nv_vars       0x0000448c      0x180 /tmp/ccQIfMaF.o
-                0x0000448c                _task_task_init
-                0x00004490                _task_task_select_func
-                0x00004494                _task_task_bit_count
-                0x00004498                _task_task_bitcount
-                0x0000449c                _task_task_ntbl_bitcnt
-                0x000044a0                _task_task_ntbl_bitcount
-                0x000044a4                _task_task_BW_btbl_bitcount
-                0x000044a8                _task_task_AR_btbl_bitcount
-                0x000044ac                _task_task_bit_shifter
-                0x000044b0                _task_task_end
-                0x000044b4                _global_func_bak
-                0x000044b6                _global_func
-                0x000044b8                _global_n_0_bak
-                0x000044ba                _global_n_0
-                0x000044bc                _global_n_1_bak
-                0x000044be                _global_n_1
-                0x000044c0                _global_n_2_bak
-                0x000044c2                _global_n_2
-                0x000044c4                _global_n_3_bak
-                0x000044c6                _global_n_3
-                0x000044c8                _global_n_4_bak
-                0x000044ca                _global_n_4
-                0x000044cc                _global_n_5_bak
-                0x000044ce                _global_n_5
-                0x000044d0                _global_n_6_bak
-                0x000044d2                _global_n_6
-                0x000044d4                _global_seed_bak
-                0x000044d8                _global_seed
-                0x000044dc                _global_iter_bak
-                0x000044de                _global_iter
-                0x000044e0                _task__entry_task
-                0x000044e4                data_src
-                0x000044ea                data_dest
-                0x000044f0                data_size
-                0x000045f6                data_src_base
-                0x000045f8                data_dest_base
-                0x000045fa                data_size_base
-                0x000045fc                gv_index
-                0x000045fe                num_dirty_gv
-                0x00004600                context_1
-                0x00004604                context_0
-                0x00004608                curctx
-                0x0000460a                _numBoots
+ .nv_vars       0x0000552a     0x11cc /tmp/ccUSFbdn.o
+                0x0000552a                _task_task_init
+                0x0000552e                _task_task_set_ukey
+                0x00005532                _task_task_done
+                0x00005536                _task_task_init_key
+                0x0000553a                _task_task_init_s
+                0x0000553e                _task_task_set_key
+                0x00005542                _task_task_set_key2
+                0x00005546                _task_task_encrypt
+                0x0000554a                _task_task_start_encrypt
+                0x0000554e                _task_task_start_encrypt2
+                0x00005552                _task_task_start_encrypt3
+                0x00005556                _global_n_bak
+                0x00005558                _global_n
+                0x0000555a                _global_index_bak
+                0x0000555c                _global_index
+                0x0000555e                _global_index2_bak
+                0x00005562                _global_index2
+                0x00005566                _global_iv_bak
+                0x0000556e                _global_iv_isDirty
+                0x0000557e                _global_iv
+                0x00005586                _global_ukey
+                0x00005596                _global_key_bak
+                0x000055de                _global_key_isDirty
+                0x00005602                _global_key
+                0x0000564a                _global_s0
+                0x00005a4a                _global_s1
+                0x00005e4a                _global_s2
+                0x0000624a                _global_s3
+                0x0000664a                _global_input_bak
+                0x00006652                _global_input_isDirty
+                0x00006656                _global_input
+                0x0000665e                _global_next_task
+                0x00006660                _global_result
+                0x0000666e                _task__entry_task
+                0x00006672                _global_return_to
+                0x00006674                data_src
+                0x00006698                data_dest
+                0x000066bc                data_size
+                0x000066e0                data_src_base
+                0x000066e2                data_dest_base
+                0x000066e4                data_size_base
+                0x000066e6                gv_index
+                0x000066e8                num_dirty_gv
+                0x000066ea                context_1
+                0x000066ee                context_0
+                0x000066f2                curctx
+                0x000066f4                _numBoots
  *(.fram_vars)
-                0x0000460c                . = ALIGN (0x2)
-                0x0000460c                PROVIDE (__fram_vars_end, .)
+                0x000066f6                . = ALIGN (0x2)
+                0x000066f6                PROVIDE (__fram_vars_end, .)
 
 .upper.rodata
  *(.upper.rodata.* .upper.rodata)
 
-.data           0x00001c00       0x80 load address 0x0000460c
+.data           0x00001c00       0x80 load address 0x000066f6
                 0x00001c00                . = ALIGN (0x2)
                 0x00001c00                PROVIDE (__datastart, .)
  *(.jcr)
@@ -448,8 +451,8 @@ __reset_vector  0x0000fffe        0x2
  .data          0x00001c02        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
  .data          0x00001c02        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
                 0x00001c02                __dso_handle
- .data          0x00001c04        0x0 /tmp/ccQIfMaF.o
- .data.rel      0x00001c04        0x2 /tmp/ccQIfMaF.o
+ .data          0x00001c04        0x0 /tmp/ccUSFbdn.o
+ .data.rel      0x00001c04        0x2 /tmp/ccUSFbdn.o
                 0x00001c04                timer
  .data          0x00001c06        0x0 /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a(printf.o)
  .data          0x00001c06        0x0 /home/reviewer/alpaca-oopsla2017/ext/libmspconsole/bld/gcc/libmspconsole.a(io.o)
@@ -484,17 +487,17 @@ __reset_vector  0x0000fffe        0x2
                 0x00001c80                _edata = .
                 0x00001c80                PROVIDE (edata, .)
                 0x00001c80                PROVIDE (__dataend, .)
-                0x0000460c                PROVIDE (__romdatastart, LOADADDR (.data))
+                0x000066f6                PROVIDE (__romdatastart, LOADADDR (.data))
                 0x00000080                PROVIDE (__romdatacopysize, SIZEOF (.data))
 
-.upper.data     0x00010000        0x2 load address 0x0000468c
-                0x0000468c                __upper_data_init = LOADADDR (.upper.data)
+.upper.data     0x00010000        0x2 load address 0x00006776
+                0x00006776                __upper_data_init = LOADADDR (.upper.data)
                 0x00010000        0x2 SHORT 0x1
                 0x00010002                __high_datastart = .
  *(.upper.data.* .upper.data)
                 0x00010002                __high_dataend = .
                 0x00000000                __rom_highdatacopysize = (SIZEOF (.upper.data) - 0x2)
-                0x0000468e                __rom_highdatastart = (LOADADDR (.upper.data) + 0x2)
+                0x00006778                __rom_highdatastart = (LOADADDR (.upper.data) + 0x2)
 
 .bss            0x00001c80       0x22
                 0x00001c80                . = ALIGN (0x2)
@@ -504,7 +507,7 @@ __reset_vector  0x0000fffe        0x2
  *(.bss .bss.* .gnu.linkonce.b.*)
  .bss           0x00001c80        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
  .bss           0x00001c80       0x12 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
- .bss           0x00001c92        0x4 /tmp/ccQIfMaF.o
+ .bss           0x00001c92        0x4 /tmp/ccUSFbdn.o
                 0x00001c92                overflow
  .bss           0x00001c96        0x0 /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a(printf.o)
  .bss           0x00001c96        0x0 /home/reviewer/alpaca-oopsla2017/ext/libmspconsole/bld/gcc/libmspconsole.a(io.o)
@@ -548,183 +551,183 @@ __reset_vector  0x0000fffe        0x2
                 0x00002400                PROVIDE (__stack, .)
  *(.stack)
 
-.text           0x00004690     0x1c9a
-                0x00004690                PROVIDE (_start, .)
-                0x00004690                . = ALIGN (0x2)
+.text           0x00006778     0x2348
+                0x00006778                PROVIDE (_start, .)
+                0x00006778                . = ALIGN (0x2)
  *(SORT(.crt_*))
  .crt_0000start
-                0x00004690        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
-                0x00004690                __crt0_start
+                0x00006778        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
+                0x00006778                __crt0_start
  .crt_0100init_bss
-                0x00004694        0xe /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_bss.o)
-                0x00004694                __crt0_init_bss
+                0x0000677c        0xe /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_bss.o)
+                0x0000677c                __crt0_init_bss
  .crt_0300movedata
-                0x000046a2       0x14 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_movedata.o)
-                0x000046a2                __crt0_movedata
+                0x0000678a       0x14 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_movedata.o)
+                0x0000678a                __crt0_movedata
  .crt_0700call_init_then_main
-                0x000046b6        0xa /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_main.o)
-                0x000046b6                __crt0_call_init_then_main
+                0x0000679e        0xa /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_main.o)
+                0x0000679e                __crt0_call_init_then_main
  .crt_0900main_init
-                0x000046c0       0x36 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
-                0x000046c0                _msp430_run_init_array
-                0x000046cc                _msp430_run_preinit_array
-                0x000046d8                _msp430_run_fini_array
-                0x000046f6                . = ALIGN (0x2)
+                0x000067a8       0x36 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
+                0x000067a8                _msp430_run_init_array
+                0x000067b4                _msp430_run_preinit_array
+                0x000067c0                _msp430_run_fini_array
+                0x000067de                . = ALIGN (0x2)
  *(.lowtext)
-                0x000046f6                . = ALIGN (0x2)
+                0x000067de                . = ALIGN (0x2)
  *(.lower.text.* .lower.text)
-                0x000046f6                . = ALIGN (0x2)
+                0x000067de                . = ALIGN (0x2)
  *(.text .stub .text.* .gnu.linkonce.t.* .text:*)
- .text          0x000046f6        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
- .text          0x000046f6       0xc6 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
- .text          0x000047bc     0x1404 /tmp/ccQIfMaF.o
-                0x000047bc                TimerB1_ISR
-                0x000047bc                __interrupt_vector_51
-                0x0000480c                init
-                0x00004898                task_init
-                0x000048f0                task_select_func
-                0x00004a6c                task_bit_count
-                0x00004b9c                task_bitcount
-                0x00004d58                recursive_cnt
-                0x00004df4                task_ntbl_bitcnt
-                0x00004ed4                task_ntbl_bitcount
-                0x00005078                task_BW_btbl_bitcount
-                0x00005184                task_AR_btbl_bitcount
-                0x000052c8                task_bit_shifter
-                0x00005448                task_end
-                0x00005520                _entry_task
-                0x00005530                _init
-                0x0000553c                clear_isDirty
-                0x0000555c                msp_watchdog_enable
-                0x00005574                msp_watchdog_disable
-                0x00005584                msp_watchdog_kick
-                0x00005598                memcpy
-                0x000055ec                my_memset
-                0x00005604                msp_clock_setup
-                0x00005624                mult16
-                0x00005638                sqrt16
-                0x00005758                udivmodhi4
-                0x00005868                __divhi3
-                0x00005910                __modhi3
-                0x0000599c                __udivhi3
-                0x000059cc                __umodhi3
-                0x000059fc                task_prologue
-                0x00005ab8                transition_to
-                0x00005b24                write_to_gbuf
-                0x00005b9c                main
- .text          0x00005bc0      0x224 /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a(printf.o)
-                0x00005c52                puts
-                0x00005c70                printf
- .text          0x00005de4       0x5e /home/reviewer/alpaca-oopsla2017/ext/libmspconsole/bld/gcc/libmspconsole.a(io.o)
-                0x00005de4                mspconsole_init
-                0x00005dea                io_putchar
-                0x00005e06                io_puts_no_newline
-                0x00005e2c                io_puts
- .text          0x00005e42      0x23e /home/reviewer/alpaca-oopsla2017/ext/libwispbase/bld/gcc/libwispbase.a(uart.o)
-                0x00005e42                UART_init
-                0x00005e84                UART_teardown
-                0x00005eaa                UART_asyncSend
-                0x00005ece                UART_send
-                0x00005ede                UART_critSend
-                0x00005f44                UART_isTxBusy
-                0x00005f4a                UART_asyncReceive
-                0x00005f70                UART_receive
-                0x00005f82                UART_critReceive
-                0x00005fe8                UART_isRxBusy
-                0x00005fee                UART_isRxDone
-                0x00005ffc                USCI_A0_ISR
- .text          0x00006080        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-exit.o)
- .text.exit     0x00006080       0x1e /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-exit.o)
-                0x00006080                exit
- .text          0x0000609e        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-impure.o)
- .text          0x0000609e        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-__call_atexit.o)
+ .text          0x000067de        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
+ .text          0x000067de       0xc6 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
+ .text          0x000068a4     0x1ab2 /tmp/ccUSFbdn.o
+                0x000068a4                TimerB1_ISR
+                0x000068a4                __interrupt_vector_51
+                0x000068f4                task_init
+                0x00006964                task_set_ukey
+                0x00006a54                task_init_key
+                0x00006aa0                task_init_s
+                0x00006bb4                task_set_key
+                0x00006eac                task_set_key2
+                0x00007256                task_encrypt
+                0x00007522                task_start_encrypt
+                0x00007a0a                task_start_encrypt2
+                0x00007a5a                task_start_encrypt3
+                0x00007bca                task_done
+                0x00007bfa                init
+                0x00007c86                _entry_task
+                0x00007c96                _init
+                0x00007ca2                clear_isDirty
+                0x00007cf2                msp_watchdog_enable
+                0x00007d0a                msp_watchdog_disable
+                0x00007d1a                msp_watchdog_kick
+                0x00007d2e                memcpy
+                0x00007d82                my_memset
+                0x00007d9a                msp_clock_setup
+                0x00007dba                mult16
+                0x00007dce                sqrt16
+                0x00007eee                udivmodhi4
+                0x00007ffe                __divhi3
+                0x000080a6                __modhi3
+                0x00008132                __udivhi3
+                0x00008162                __umodhi3
+                0x00008192                task_prologue
+                0x0000824e                transition_to
+                0x000082ba                write_to_gbuf
+                0x00008332                main
+ .text          0x00008356      0x224 /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a(printf.o)
+                0x000083e8                puts
+                0x00008406                printf
+ .text          0x0000857a       0x5e /home/reviewer/alpaca-oopsla2017/ext/libmspconsole/bld/gcc/libmspconsole.a(io.o)
+                0x0000857a                mspconsole_init
+                0x00008580                io_putchar
+                0x0000859c                io_puts_no_newline
+                0x000085c2                io_puts
+ .text          0x000085d8      0x23e /home/reviewer/alpaca-oopsla2017/ext/libwispbase/bld/gcc/libwispbase.a(uart.o)
+                0x000085d8                UART_init
+                0x0000861a                UART_teardown
+                0x00008640                UART_asyncSend
+                0x00008664                UART_send
+                0x00008674                UART_critSend
+                0x000086da                UART_isTxBusy
+                0x000086e0                UART_asyncReceive
+                0x00008706                UART_receive
+                0x00008718                UART_critReceive
+                0x0000877e                UART_isRxBusy
+                0x00008784                UART_isRxDone
+                0x00008792                USCI_A0_ISR
+ .text          0x00008816        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-exit.o)
+ .text.exit     0x00008816       0x1e /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-exit.o)
+                0x00008816                exit
+ .text          0x00008834        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-impure.o)
+ .text          0x00008834        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-__call_atexit.o)
  .text.__call_exitprocs
-                0x0000609e      0x124 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-__call_atexit.o)
-                0x0000609e                __call_exitprocs
- .text          0x000061c2       0x74 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/libgcc.a(slli.o)
-                0x000061c2                __mspabi_slli_15
-                0x000061c4                __mspabi_slli_14
-                0x000061c6                __mspabi_slli_13
-                0x000061c8                __mspabi_slli_12
-                0x000061ca                __mspabi_slli_11
-                0x000061cc                __mspabi_slli_10
-                0x000061ce                __mspabi_slli_9
-                0x000061d0                __mspabi_slli_8
-                0x000061d2                __mspabi_slli_7
-                0x000061d4                __mspabi_slli_6
-                0x000061d6                __mspabi_slli_5
-                0x000061d8                __mspabi_slli_4
-                0x000061da                __mspabi_slli_3
-                0x000061dc                __mspabi_slli_2
-                0x000061de                __mspabi_slli_1
-                0x000061e6                __mspabi_slli
-                0x000061ec                __mspabi_slll_15
-                0x000061f0                __mspabi_slll_14
-                0x000061f4                __mspabi_slll_13
-                0x000061f8                __mspabi_slll_12
-                0x000061fc                __mspabi_slll_11
-                0x00006200                __mspabi_slll_10
-                0x00006204                __mspabi_slll_9
-                0x00006208                __mspabi_slll_8
-                0x0000620c                __mspabi_slll_7
-                0x00006210                __mspabi_slll_6
-                0x00006214                __mspabi_slll_5
-                0x00006218                __mspabi_slll_4
-                0x0000621c                __mspabi_slll_3
-                0x00006220                __mspabi_slll_2
-                0x00006224                __mspabi_slll_1
-                0x00006230                __mspabi_slll
- .text          0x00006236        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_bss.o)
- .text          0x00006236        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_movedata.o)
- .text          0x00006236        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_main.o)
- .text          0x00006236       0x60 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libnosys.a(nosyscalls.o)
-                0x00006236                _exit
-                0x00006238                open
-                0x00006246                close
-                0x00006254                read
-                0x00006262                fstat
-                0x00006270                lseek
-                0x0000627e                kill
-                0x0000628c                isatty
-                0x0000628c                _isatty
-                0x00006290                getpid
- .text          0x00006296        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-errno.o)
- .text.__errno  0x00006296        0x6 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-errno.o)
-                0x00006296                __errno
- .text          0x0000629c        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-memmove.o)
- .text.memmove  0x0000629c       0x40 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-memmove.o)
-                0x0000629c                memmove
- .text          0x000062dc        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-memset.o)
- .text.memset   0x000062dc       0x12 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-memset.o)
-                0x000062dc                memset
- .text          0x000062ee       0x20 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
- .text          0x0000630e        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crtn.o
+                0x00008834      0x124 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-__call_atexit.o)
+                0x00008834                __call_exitprocs
+ .text          0x00008958       0x74 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/libgcc.a(slli.o)
+                0x00008958                __mspabi_slli_15
+                0x0000895a                __mspabi_slli_14
+                0x0000895c                __mspabi_slli_13
+                0x0000895e                __mspabi_slli_12
+                0x00008960                __mspabi_slli_11
+                0x00008962                __mspabi_slli_10
+                0x00008964                __mspabi_slli_9
+                0x00008966                __mspabi_slli_8
+                0x00008968                __mspabi_slli_7
+                0x0000896a                __mspabi_slli_6
+                0x0000896c                __mspabi_slli_5
+                0x0000896e                __mspabi_slli_4
+                0x00008970                __mspabi_slli_3
+                0x00008972                __mspabi_slli_2
+                0x00008974                __mspabi_slli_1
+                0x0000897c                __mspabi_slli
+                0x00008982                __mspabi_slll_15
+                0x00008986                __mspabi_slll_14
+                0x0000898a                __mspabi_slll_13
+                0x0000898e                __mspabi_slll_12
+                0x00008992                __mspabi_slll_11
+                0x00008996                __mspabi_slll_10
+                0x0000899a                __mspabi_slll_9
+                0x0000899e                __mspabi_slll_8
+                0x000089a2                __mspabi_slll_7
+                0x000089a6                __mspabi_slll_6
+                0x000089aa                __mspabi_slll_5
+                0x000089ae                __mspabi_slll_4
+                0x000089b2                __mspabi_slll_3
+                0x000089b6                __mspabi_slll_2
+                0x000089ba                __mspabi_slll_1
+                0x000089c6                __mspabi_slll
+ .text          0x000089cc        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_bss.o)
+ .text          0x000089cc        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_movedata.o)
+ .text          0x000089cc        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libcrt.a(crt_main.o)
+ .text          0x000089cc       0x60 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libnosys.a(nosyscalls.o)
+                0x000089cc                _exit
+                0x000089ce                open
+                0x000089dc                close
+                0x000089ea                read
+                0x000089f8                fstat
+                0x00008a06                lseek
+                0x00008a14                kill
+                0x00008a22                isatty
+                0x00008a22                _isatty
+                0x00008a26                getpid
+ .text          0x00008a2c        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-errno.o)
+ .text.__errno  0x00008a2c        0x6 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-errno.o)
+                0x00008a2c                __errno
+ .text          0x00008a32        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-memmove.o)
+ .text.memmove  0x00008a32       0x40 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-memmove.o)
+                0x00008a32                memmove
+ .text          0x00008a72        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-memset.o)
+ .text.memset   0x00008a72       0x12 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/libc.a(lib_a-memset.o)
+                0x00008a72                memset
+ .text          0x00008a84       0x20 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
+ .text          0x00008aa4        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crtn.o
  *(.text.*personality*)
  *(.gnu.warning)
  *(.interp .hash .dynsym .dynstr .gnu.version*)
-                0x0000630e                PROVIDE (__etext, .)
-                0x0000630e                PROVIDE (_etext, .)
-                0x0000630e                PROVIDE (etext, .)
-                0x0000630e                . = ALIGN (0x2)
+                0x00008aa4                PROVIDE (__etext, .)
+                0x00008aa4                PROVIDE (_etext, .)
+                0x00008aa4                PROVIDE (etext, .)
+                0x00008aa4                . = ALIGN (0x2)
  *(.init)
- .init          0x0000630e        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
-                0x0000630e                __msp430_init
- .init          0x0000630e        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
- .init          0x00006312        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
- .init          0x00006316        0xa /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crtn.o
-                0x00006320                __msp430_init_end
+ .init          0x00008aa4        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
+                0x00008aa4                __msp430_init
+ .init          0x00008aa4        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
+ .init          0x00008aa8        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
+ .init          0x00008aac        0xa /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crtn.o
+                0x00008ab6                __msp430_init_end
  *(.fini)
- .fini          0x00006320        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
-                0x00006320                __msp430_fini
- .fini          0x00006324        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
- .fini          0x00006328        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crtn.o
-                0x0000632a                __msp430_fini_end
+ .fini          0x00008ab6        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crt0.o
+                0x00008ab6                __msp430_fini
+ .fini          0x00008aba        0x4 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
+ .fini          0x00008abe        0x2 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/../../../../msp430-elf/lib/crtn.o
+                0x00008ac0                __msp430_fini_end
  *(.tm_clone_table)
  .tm_clone_table
-                0x0000632a        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
+                0x00008ac0        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
  .tm_clone_table
-                0x0000632a        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
-                0x0000632a                __TMC_END__
+                0x00008ac0        0x0 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtend.o
+                0x00008ac0                __TMC_END__
 
 .upper.text     0x00010002        0x0
                 0x00010002                . = ALIGN (0x2)
@@ -746,7 +749,7 @@ __reset_vector  0x0000fffe        0x2
  .MSP430.attributes
                 0x00000017       0x17 /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
  .MSP430.attributes
-                0x0000002e       0x17 /tmp/ccQIfMaF.o
+                0x0000002e       0x17 /tmp/ccUSFbdn.o
  .MSP430.attributes
                 0x00000045       0x17 /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a(printf.o)
  .MSP430.attributes
@@ -804,7 +807,7 @@ __reset_vector  0x0000fffe        0x2
  *(.comment)
  .comment       0x00000000       0x7c /opt/ti/mspgcc/bin/../lib/gcc/msp430-elf/4.9.1/crtbegin.o
                                  0x7d (size before relaxing)
- .comment       0x0000007c       0xa5 /tmp/ccQIfMaF.o
+ .comment       0x0000007c       0xa5 /tmp/ccUSFbdn.o
                                 0x673 (size before relaxing)
  .comment       0x00000000       0x7d /home/reviewer/alpaca-oopsla2017/ext/libmspprintf/bld/gcc/libmspprintf.a(printf.o)
  .comment       0x00000000       0x7d /home/reviewer/alpaca-oopsla2017/ext/libmspconsole/bld/gcc/libmspconsole.a(io.o)
@@ -1016,4 +1019,4 @@ __reset_vector  0x0000fffe        0x2
 
 /DISCARD/
  *(.note.GNU-stack)
-OUTPUT(bc.out elf32-msp430)
+OUTPUT(blowfish.out elf32-msp430)
