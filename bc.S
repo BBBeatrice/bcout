@@ -103,6 +103,7 @@ task_init:                              ; @task_init
 	mov.w	#.L.str.1, 0(r14)
 	call	#printf
 	mov.w	#0, &_global_func
+	mov.w	#0, &_global_n
 	mov.w	#0, &_global_n_0
 	mov.w	#0, &_global_n_1
 	mov.w	#0, &_global_n_2
@@ -279,6 +280,8 @@ task_bit_count:                         ; @task_bit_count
 	sub.w	#16, r1
 	mov.w	&_global_iter, r12
 	mov.w	r12, &_global_iter_bak
+	mov.w	&_global_n, r12
+	mov.w	r12, &_global_n_bak
 	mov.w	&_global_n_0, r12
 	mov.w	r12, &_global_n_0_bak
 	mov.w	&_global_seed, r12
@@ -331,9 +334,12 @@ task_bit_count:                         ; @task_bit_count
 	mov.w	&_global_n_0_bak, r13
 	add.w	r12, r13
 	mov.w	r13, &_global_n_0_bak
-	mov.w	r1, r12
-	mov.w	r13, 2(r12)
-	mov.w	#.L.str.2, 0(r12)
+	mov.w	&_global_n_bak, r12
+	add.w	#1, r12
+	mov.w	r12, &_global_n_bak
+	mov.w	r1, r13
+	mov.w	r12, 2(r13)
+	mov.w	#.L.str.2, 0(r13)
 	call	#printf
 	mov.w	&_global_iter_bak, r12
 	add.w	#1, r12
@@ -342,12 +348,16 @@ task_bit_count:                         ; @task_bit_count
 	mov.w	r15, -8(r4)             ; 2-byte Folded Spill
 	jhs	.LBB4_7
 	jmp	.LBB4_6
-.LBB4_6:                                ; %if.then.4
+.LBB4_6:                                ; %if.then.5
 	mov.w	#_global_iter, r14
 	mov.w	#_global_iter_bak, r15
 	mov.w	#2, r12
 	mov.w	r12, r13
 	mov.w	r12, -10(r4)            ; 2-byte Folded Spill
+	call	#write_to_gbuf
+	mov.w	#_global_n, r14
+	mov.w	#_global_n_bak, r15
+	mov.w	-10(r4), r13            ; 2-byte Folded Reload
 	call	#write_to_gbuf
 	mov.w	#_global_n_0, r14
 	mov.w	#_global_n_0_bak, r15
@@ -367,6 +377,10 @@ task_bit_count:                         ; @task_bit_count
 	mov.w	r12, r13
 	mov.w	r12, -12(r4)            ; 2-byte Folded Spill
 	call	#write_to_gbuf
+	mov.w	#_global_n, r14
+	mov.w	#_global_n_bak, r15
+	mov.w	-12(r4), r13            ; 2-byte Folded Reload
+	call	#write_to_gbuf
 	mov.w	#_global_n_0, r14
 	mov.w	#_global_n_0_bak, r15
 	mov.w	-12(r4), r13            ; 2-byte Folded Reload
@@ -378,7 +392,7 @@ task_bit_count:                         ; @task_bit_count
 	mov.w	#_task_task_select_func, r15
 	call	#transition_to
 	jmp	.LBB4_8
-.LBB4_8:                                ; %if.end.5
+.LBB4_8:                                ; %if.end.6
 	add.w	#16, r1
 	pop.w	r4
 	ret
@@ -622,7 +636,7 @@ task_ntbl_bitcnt:                       ; @task_ntbl_bitcnt
 ; BB#0:                                 ; %entry
 	push.w	r4
 	mov.w	r1, r4
-	sub.w	#4, r1
+	sub.w	#12, r1
 	mov.w	&_global_iter, r12
 	mov.w	r12, &_global_iter_bak
 	mov.w	&_global_n_2, r12
@@ -644,9 +658,21 @@ task_ntbl_bitcnt:                       ; @task_ntbl_bitcnt
 	mov.w	r13, &_global_seed_bak+2
 	mov.w	r12, &_global_seed_bak
 	mov.w	&_global_iter_bak, r12
+	mov.w	r1, r13
+	mov.w	r12, 2(r13)
+	mov.w	#.L.str.3, 0(r13)
+	call	#printf
+	mov.w	&_global_iter_bak, r12
 	add.w	#1, r12
 	mov.w	r12, &_global_iter_bak
+	mov.w	r1, r13
+	mov.w	r12, 2(r13)
+	mov.w	#.L.str.3, 0(r13)
+	mov.w	r15, -2(r4)             ; 2-byte Folded Spill
+	call	#printf
+	mov.w	&_global_iter_bak, r12
 	cmp.w	#100, r12
+	mov.w	r15, -4(r4)             ; 2-byte Folded Spill
 	jhs	.LBB7_2
 	jmp	.LBB7_1
 .LBB7_1:                                ; %if.then
@@ -654,11 +680,11 @@ task_ntbl_bitcnt:                       ; @task_ntbl_bitcnt
 	mov.w	#_global_iter_bak, r15
 	mov.w	#2, r12
 	mov.w	r12, r13
-	mov.w	r12, -2(r4)             ; 2-byte Folded Spill
+	mov.w	r12, -6(r4)             ; 2-byte Folded Spill
 	call	#write_to_gbuf
 	mov.w	#_global_n_2, r14
 	mov.w	#_global_n_2_bak, r15
-	mov.w	-2(r4), r13             ; 2-byte Folded Reload
+	mov.w	-6(r4), r13             ; 2-byte Folded Reload
 	call	#write_to_gbuf
 	mov.w	#_global_seed, r14
 	mov.w	#_global_seed_bak, r15
@@ -672,11 +698,11 @@ task_ntbl_bitcnt:                       ; @task_ntbl_bitcnt
 	mov.w	#_global_iter_bak, r15
 	mov.w	#2, r12
 	mov.w	r12, r13
-	mov.w	r12, -4(r4)             ; 2-byte Folded Spill
+	mov.w	r12, -8(r4)             ; 2-byte Folded Spill
 	call	#write_to_gbuf
 	mov.w	#_global_n_2, r14
 	mov.w	#_global_n_2_bak, r15
-	mov.w	-4(r4), r13             ; 2-byte Folded Reload
+	mov.w	-8(r4), r13             ; 2-byte Folded Reload
 	call	#write_to_gbuf
 	mov.w	#_global_seed, r14
 	mov.w	#_global_seed_bak, r15
@@ -686,7 +712,7 @@ task_ntbl_bitcnt:                       ; @task_ntbl_bitcnt
 	call	#transition_to
 	jmp	.LBB7_3
 .LBB7_3:                                ; %if.end
-	add.w	#4, r1
+	add.w	#12, r1
 	pop.w	r4
 	ret
 .Lfunc_end7:
@@ -1214,12 +1240,12 @@ task_end:                               ; @task_end
 	mov.w	r1, r14
 	mov.w	r13, 4(r14)
 	mov.w	r12, 2(r14)
-	mov.w	#.L.str.3, 0(r14)
+	mov.w	#.L.str.4, 0(r14)
 	call	#printf
 	mov.w	&_global_n_0, r12
 	mov.w	r1, r13
 	mov.w	r12, 2(r13)
-	mov.w	#.L.str.4, 0(r13)
+	mov.w	#.L.str.3, 0(r13)
 	mov.w	r15, -2(r4)             ; 2-byte Folded Spill
 	call	#printf
 	mov.w	#0, r12
@@ -2216,6 +2242,20 @@ _global_func:
 	.short	0                       ; 0x0
 	.size	_global_func, 2
 
+	.type	_global_n_bak,@object   ; @_global_n_bak
+	.globl	_global_n_bak
+	.align	1
+_global_n_bak:
+	.short	0                       ; 0x0
+	.size	_global_n_bak, 2
+
+	.type	_global_n,@object       ; @_global_n
+	.globl	_global_n
+	.align	1
+_global_n:
+	.short	0                       ; 0x0
+	.size	_global_n, 2
+
 	.type	_global_n_0_bak,@object ; @_global_n_0_bak
 	.globl	_global_n_0_bak
 	.align	1
@@ -2354,22 +2394,22 @@ _task__entry_task:
 	.globl	data_src
 	.align	1
 data_src:
-	.zero	6
-	.size	data_src, 6
+	.zero	8
+	.size	data_src, 8
 
 	.type	data_dest,@object       ; @data_dest
 	.globl	data_dest
 	.align	1
 data_dest:
-	.zero	6
-	.size	data_dest, 6
+	.zero	8
+	.size	data_dest, 8
 
 	.type	data_size,@object       ; @data_size
 	.globl	data_size
 	.align	1
 data_size:
-	.zero	6
-	.size	data_size, 6
+	.zero	8
+	.size	data_size, 8
 
 	.type	.L.str,@object          ; @.str
 	.section	.rodata.str1.1,"aMS",@progbits,1
@@ -2396,13 +2436,13 @@ bits:
 	.type	.L.str.3,@object        ; @.str.3
 	.section	.rodata.str1.1,"aMS",@progbits,1
 .L.str.3:
-	.asciz	"TIME end is 65536*%u+%u\r\n"
-	.size	.L.str.3, 26
+	.asciz	"%u\r\n"
+	.size	.L.str.3, 5
 
 	.type	.L.str.4,@object        ; @.str.4
 .L.str.4:
-	.asciz	"%u\r\n"
-	.size	.L.str.4, 5
+	.asciz	"TIME end is 65536*%u+%u\r\n"
+	.size	.L.str.4, 26
 
 	.type	watchdog_bits,@object   ; @watchdog_bits
 	.local	watchdog_bits
